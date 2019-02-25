@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+    php72:
+        build: './php72'
+        expose: 
+            - '9000'
+
+    php71:
+        build: './php71'
+        expose: 
+            - '9000'
+
+    php70:
+        build: './php70'
+        expose: 
+            - '9000'            
