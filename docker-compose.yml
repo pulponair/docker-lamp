@@ -1,24 +1,24 @@
 version: "3.2"
 services:
     apache:
-        build: './apache' 
+        build: './containers/apache' 
         ports:
             - 80:80
         volumes:
-            - ./apache/vhosts.d/:/usr/local/apache2/conf/vhosts.d/
+            - ./containers/apache/vhosts.d/:/usr/local/apache2/conf/vhosts.d/
             - ./public_html/:/var/www/html/
     php72:
-        build: './php72'
+        build: './containers/php72'
         volumes:
             - ./public_html/:/var/www/html/
 
     php71:
-        build: './php71'
+        build: './containers/php71'
         volumes:
             - ./public_html/:/var/www/html/
 
     php70:
-        build: './php70'
+        build: './containers/php70'
         volumes:
             - ./public_html/:/var/www/html/
 
