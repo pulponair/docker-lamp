@@ -22,3 +22,8 @@ services:
         volumes:
             - ./public_html/:/var/www/html/
 
+    php56:
+        build: './containers/php56'
+        volumes:
+            - ./public_html/:/var/www/html/
+
