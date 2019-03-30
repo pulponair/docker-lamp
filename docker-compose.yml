@@ -1,36 +1,38 @@
 version: "3.2"
 services:
-    apache:
-        build: './containers/apache'
-        ports:
-            - 80:80
-        volumes:
-            - ./containers/apache/vhosts.d:/usr/local/apache2/conf/vhosts.d
-            - ./public_html:/var/www/html
-    php72:
-        build: './containers/php72'
-        volumes:
-            - ./public_html:/var/www/html
+  apache:
+    build: './containers/apache'
+    ports:
+    - 80:80
+    volumes:
+    - ./containers/apache/vhosts.d:/usr/local/apache2/conf/vhosts.d
+    - ./public_html:/var/www/html
+  php72:
+    build: './containers/php72'
+    volumes:
+    - ./public_html:/var/www/html
 
-    php71:
-        build: './containers/php71'
-        volumes:
-            - ./public_html:/var/www/html
+  php71:
+    build: './containers/php71'
+    volumes:
+    - ./public_html:/var/www/html
 
-    php70:
-        build: './containers/php70'
-        volumes:
-            - ./public_html:/var/www/html
+  php70:
+    build: './containers/php70'
+    volumes:
+    - ./public_html:/var/www/html
 
-    php56:
-        build: './containers/php56'
-        volumes:
-            - ./public_html:/var/www/html
-    mysql:
-        build: './containers/mysql57'
-        volumes:
-            - ./containers/mysql57/db:/var/lib/mysql
-        environment:
-            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+  php56:
+    build: './containers/php56'
+    volumes:
+    - ./public_html:/var/www/html
+  mysql:
+    build: './containers/mysql57'
+    volumes:
+    - dbdata:/var/lib/mysql
+    environment:
+    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
 
+volumes:
+  dbdata:
 
