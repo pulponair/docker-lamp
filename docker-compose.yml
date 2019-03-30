@@ -6,26 +6,27 @@ services:
     - 80:80
     volumes:
     - ./containers/apache/vhosts.d:/usr/local/apache2/conf/vhosts.d
-    - ./public_html:/var/www/html
+    - dlamp:/var/www/dlamp
   php72:
     build: './containers/php72'
     volumes:
-    - ./public_html:/var/www/html
+    - dlamp:/var/www/dlamp
 
   php71:
     build: './containers/php71'
     volumes:
-    - ./public_html:/var/www/html
+    - dlamp:/var/www/dlamp
 
   php70:
     build: './containers/php70'
     volumes:
-    - ./public_html:/var/www/html
+    - dlamp:/var/www/dlamp
 
   php56:
     build: './containers/php56'
     volumes:
-    - ./public_html:/var/www/html
+    - dlamp:/var/www/dlamp
+
   mysql:
     build: './containers/mysql57'
     volumes:
@@ -35,4 +36,5 @@ services:
 
 volumes:
   dbdata:
+  dlamp:
 
