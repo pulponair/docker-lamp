@@ -24,6 +24,6 @@ LAMP, MAMP, XAMPP kind of suck, when it comes to realworld problems. There is a 
 6. Build an UI (elektron?) to make it easy for the youngsters
 7. Provide the js world (npm, grunt, bower, whatever)
 8. Find out how people r working and provide a solution
-9. Find out moderate mySql settings for a devenvironment
+9. Find out moderate mySql settings for a dev environment
 10. Find a way to enable xdebug on demand 
 
