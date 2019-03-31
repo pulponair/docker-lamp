@@ -6,7 +6,8 @@ LAMP, MAMP, XAMPP kind of suck, when it comes to realworld problems. There is a 
 2. Boarding to a project
 3. Boarding to a project, with live data and assets
 4. Boarding to that project having the right versions ready.
-5...
+5. People r using IDEs like phstorm etc. it has to work right away
+6. Webdev people usually do not have much of devops knowlegde
 
 ## ToDo
 1. Consider to use one container for PHP FPM, cause building takes to long
