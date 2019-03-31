@@ -5,7 +5,7 @@ LAMP, MAMP, XAMMP kind of suck, when it comes to realworld problems. There is a 
 1. Boarding
 2. Boarding to a project
 3. Boarding to a project, with live data and assets
-4. Boarding to that projekt having the right versions ready.
+4. Boarding to that project having the right versions ready.
 5...
 
 ## ToDo
