@@ -9,6 +9,12 @@ LAMP, MAMP, XAMPP kind of suck, when it comes to realworld problems. There is a 
 5. People are using IDEs like phstorm etc. it has to work right away
 6. Webdev people usually do not have much of devops knowlegde
 
+## Usage
+ - symlink var/www/sites to your project directory
+ - add VHost in etc/apache2/vhosts.d/
+ - add local /etc/hosts entry (my-site.internal .e.g)
+ - Start working
+
 ## ToDo
 1. Consider to use one container for PHP FPM, cause building takes to long
 2. Consider to use a build container see 1.

@@ -7,25 +7,31 @@ services:
     volumes:
     - ./etc/apache2/vhosts.d:/usr/local/apache2/conf/vhosts.d
     - dlamp:/var/www/dlamp
+    - ./var/www/sites:/var/www/sites
   php72:
     build: './containers/php72'
     volumes:
     - dlamp:/var/www/dlamp
+    - ./var/www/sites:/var/www/sites
 
   php71:
     build: './containers/php71'
     volumes:
     - dlamp:/var/www/dlamp
+    - ./var/www/sites:/var/www/sites
 
   php70:
     build: './containers/php70'
     volumes:
     - dlamp:/var/www/dlamp
+    - ./var/www/sites:/var/www/sites
 
   php56:
     build: './containers/php56'
     volumes:
     - dlamp:/var/www/dlamp
+    - ./var/www/sites:/var/www/sites
+
 
   mysql:
     build: './containers/mysql57'
