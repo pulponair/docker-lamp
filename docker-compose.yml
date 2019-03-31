@@ -5,7 +5,7 @@ services:
     ports:
     - 80:80
     volumes:
-    - ./containers/apache/vhosts.d:/usr/local/apache2/conf/vhosts.d
+    - ./etc/apache2/vhosts.d:/usr/local/apache2/conf/vhosts.d
     - dlamp:/var/www/dlamp
   php72:
     build: './containers/php72'
