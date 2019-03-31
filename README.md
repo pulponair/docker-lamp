@@ -1,7 +1,7 @@
 # docker-lamp
 
 ## Purpose
-LAMP, MAMP, XAMMP kind of suck, when it comes to realworld problems. There is a couple of issues:
+LAMP, MAMP, XAMPP kind of suck, when it comes to realworld problems. There is a couple of issues:
 1. Boarding
 2. Boarding to a project
 3. Boarding to a project, with live data and assets
