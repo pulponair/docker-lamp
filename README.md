@@ -1,4 +1,5 @@
 # docker-lamp
+![Screenshot](baaaa.svg)
 
 ## Purpose
 LAMP, MAMP, XAMPP kind of suck, when it comes to realworld problems. There is a couple of issues:
