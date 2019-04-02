@@ -1,1 +1,4 @@
 .idea
+etc/apache2/vhosts.d/
+!etc/apache2/vhosts.d/default.conf
+/var/www/sites
