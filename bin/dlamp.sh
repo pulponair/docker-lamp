@@ -26,19 +26,19 @@ subcommand=$1; shift
 case "$subcommand" in
   php )
     echo "$subcommand $1"
-    docker run --rm -v $(pwd):/work -w /work dockerlamp_php72:latest php $1
+    docker run --rm -v /$(pwd):/work -w //work docker-lamp_php72:latest php $1
     ;;
   php71 )
     echo "$subcommand $1"
-    docker run --rm -v $(pwd):/work -w /work dockerlamp_php71:latest php $1
+    docker run --rm -v /$(pwd):/work -w //work docker-lamp_php71:latest php $1
     ;;
   php70 )
     echo "$subcommand $1"
-    docker run --rm -v $(pwd):/work -w /work dockerlamp_php70:latest php $1
+    docker run --rm -v /$(pwd):/work -w //work docker-lamp_php70:latest php $1
     ;;
   php56 )
     echo "$subcommand $1"
-    docker run --rm -v $(pwd):/work -w /work dockerlamp_php56:latest php $1
+    docker run --rm -v /$(pwd):/work -w //work docker-lamp_php56:latest php $1
     ;;
   * )
     usage
