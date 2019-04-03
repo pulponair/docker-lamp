@@ -2,6 +2,7 @@ version: "3.2"
 services:
   apache:
     build: './containers/apache'
+    image: 'docker-lamp_apache'
     ports:
     - 80:80
     volumes:
@@ -10,31 +11,35 @@ services:
     - ./var/www/sites:/var/www/sites
   php72:
     build: './containers/php72'
+    image: 'docker-lamp_php72'
     volumes:
     - dlamp:/var/www/dlamp
     - ./var/www/sites:/var/www/sites
 
   php71:
     build: './containers/php71'
+    image: 'docker-lamp_php71'
     volumes:
     - dlamp:/var/www/dlamp
     - ./var/www/sites:/var/www/sites
 
   php70:
     build: './containers/php70'
+    image: 'docker-lamp_php70'
     volumes:
     - dlamp:/var/www/dlamp
     - ./var/www/sites:/var/www/sites
 
   php56:
     build: './containers/php56'
+    image: 'docker-lamp_php56'
     volumes:
     - dlamp:/var/www/dlamp
     - ./var/www/sites:/var/www/sites
 
-
   mysql:
     build: './containers/mysql57'
+    image: 'docker-lamp_mysql'
     volumes:
     - dbdata:/var/lib/mysql
     environment:
