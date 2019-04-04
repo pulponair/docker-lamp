@@ -35,10 +35,10 @@ subcommand=$1; shift
 case "$subcommand" in
     php )
         php_version=$(get_php_version $1); shift
-        docker run --rm --user $UID -v /$(pwd):/work -w //work docker-lamp_php$php_version:latest php "$*"
+        docker run --rm --user $UID:$EUID -v /$(pwd):/work -w //work docker-lamp_php$php_version:latest php "$*"
         ;;
     composer )
-        docker run --rm --user $UID -ti -v /$(pwd):/work -w //work docker-lamp_php72:latest composer "$*"
+        docker run --rm --user $UID:$EUID -ti -v /$(pwd):/work -w //work docker-lamp_php72:latest composer "$*"
         ;;
     * )
         usage
