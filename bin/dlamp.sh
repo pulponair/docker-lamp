@@ -3,6 +3,7 @@ usage() {
     echo "Usage:"
     echo "    dlamp -h                                  Display this help message."
     echo "    dlamp php [-72|-71|-70|-56] <command>     Execute PHP"
+    echo "    dlamp composer <command>                  Execute composer"
     exit 0
 }
 
@@ -35,6 +36,9 @@ case "$subcommand" in
     php )
         php_version=$(get_php_version $1); shift
         docker run --rm -v /$(pwd):/work -w //work docker-lamp_php$php_version:latest php "$*"
+        ;;
+    composer )
+        docker run --rm -v /$(pwd):/work -w //work docker-lamp_php72:latest composer "$*"
         ;;
     * )
         usage
