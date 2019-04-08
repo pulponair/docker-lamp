@@ -36,19 +36,12 @@ shift $((OPTIND -1))
 
 subcommand=$1; shift
 case "$subcommand" in
-    php )
+    php|composer )
         php_version=$(get_php_version $1)
         if [[ "$php_version" != "$default_php_version" ]]; then
             shift
         fi
-        docker run --rm --user $UID:$EUID -v /$(pwd):/work -w //work docker-lamp_php$php_version:latest php "$*"
-        ;;
-    composer )
-        php_version=$(get_php_version $1)
-        if [[ "$php_version" != "$default_php_version" ]]; then
-            shift
-        fi
-        docker-compose run --rm --user $UID:$EUID  -v /$(pwd):/work -w //work php$php_version composer "$*"
+        docker-compose run --rm --user $UID:$EUID  -v /$(pwd):/work -w //work php$php_version $subcommand "$*"
         ;;
     * )
         usage
