@@ -1,4 +1,7 @@
 #!/bin/bash
+
+default_php_version=72
+
 usage() {
     echo "Usage:"
     echo "    dlamp -h                                  Display this help message."
@@ -8,7 +11,7 @@ usage() {
 }
 
 get_php_version() {
-    local php_version=72
+    local php_version=$default_php_version
     local valid_php_versions=(72 71 70 56)
 
     if [[ " ${valid_php_versions[*]} " == *"${1:1:2}"* ]]; then
@@ -34,7 +37,10 @@ shift $((OPTIND -1))
 subcommand=$1; shift
 case "$subcommand" in
     php )
-        php_version=$(get_php_version $1); shift
+        php_version=$(get_php_version $1)
+        if [[ "$php_version" != "$default_php_version" ]]; then
+            shift
+        fi
         docker run --rm --user $UID:$EUID -v /$(pwd):/work -w //work docker-lamp_php$php_version:latest php "$*"
         ;;
     composer )
