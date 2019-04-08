@@ -7,12 +7,12 @@ services:
     - 80:80
     volumes:
     - ./etc/apache2/vhosts.d:/usr/local/apache2/conf/vhosts.d
-    - dlamp:/var/www/dlamp
     - ./var/www/sites:/var/www/sites
   php72:
     build: './containers/php72'
     image: 'docker-lamp_php72'
     volumes:
+    - opt:/opt
     - dlamp:/var/www/dlamp
     - ./var/www/sites:/var/www/sites
 
@@ -20,6 +20,7 @@ services:
     build: './containers/php71'
     image: 'docker-lamp_php71'
     volumes:
+    - opt:/opt
     - dlamp:/var/www/dlamp
     - ./var/www/sites:/var/www/sites
 
@@ -27,6 +28,7 @@ services:
     build: './containers/php70'
     image: 'docker-lamp_php70'
     volumes:
+    - opt:/opt
     - dlamp:/var/www/dlamp
     - ./var/www/sites:/var/www/sites
 
@@ -34,6 +36,7 @@ services:
     build: './containers/php56'
     image: 'docker-lamp_php56'
     volumes:
+    - opt:/opt
     - dlamp:/var/www/dlamp
     - ./var/www/sites:/var/www/sites
 
@@ -48,4 +51,4 @@ services:
 volumes:
   dbdata:
   dlamp:
-
+  opt:

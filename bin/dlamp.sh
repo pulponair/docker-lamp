@@ -44,7 +44,11 @@ case "$subcommand" in
         docker run --rm --user $UID:$EUID -v /$(pwd):/work -w //work docker-lamp_php$php_version:latest php "$*"
         ;;
     composer )
-        docker run --rm --user $UID:$EUID -ti -v /$(pwd):/work -w //work docker-lamp_php72:latest composer "$*"
+        php_version=$(get_php_version $1)
+        if [[ "$php_version" != "$default_php_version" ]]; then
+            shift
+        fi
+        docker-compose run --rm --user $UID:$EUID  -v /$(pwd):/work -w //work php$php_version composer "$*"
         ;;
     * )
         usage

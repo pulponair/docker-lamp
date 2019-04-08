@@ -7,6 +7,9 @@ RUN apk update \
     && echo "memory_limit=256M" > /usr/local/etc/php/conf.d/dlamp.ini \ 
     && echo "post_max_size=132M" >> /usr/local/etc/php/conf.d/dlamp.ini \ 
     && echo "upload_max_filesize=128M" >> /usr/local/etc/php/conf.d/dlamp.ini \
+    && mkdir /opt/bin \
     && curl --silent --output composer-setup.php  https://getcomposer.org/installer \
-    && php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --quiet \
+    && php composer-setup.php --install-dir=/opt/bin/ --filename=composer --quiet \
     && rm composer-setup.php
+
+ENV PATH="/opt/bin:${PATH}"
