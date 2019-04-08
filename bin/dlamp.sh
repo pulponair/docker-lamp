@@ -4,9 +4,9 @@ default_php_version=72
 
 usage() {
     echo "Usage:"
-    echo "    dlamp -h                                  Display this help message."
-    echo "    dlamp php [-72|-71|-70|-56] <command>     Execute PHP"
-    echo "    dlamp composer <command>                  Execute composer"
+    echo "    dlamp -h                                      Display this help message."
+    echo "    dlamp php [-72|-71|-70|-56] <command>         Execute PHP"
+    echo "    dlamp composer [-72|-71|-70|-56] <command>    Execute composer"
     exit 0
 }
 
