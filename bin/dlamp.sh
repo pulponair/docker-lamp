@@ -1,6 +1,6 @@
 #!/bin/bash
-
 default_php_version=72
+docker_compose_file=$(dirname "$0")/../docker-compose.yml
 
 usage() {
     echo "Usage:"
@@ -11,7 +11,7 @@ usage() {
 }
 
 get_php_version() {
-    local php_version=$default_php_version
+    local php_version=${default_php_version}
     local valid_php_versions=(72 71 70 56)
 
     if [[ " ${valid_php_versions[*]} " == *"${1:1:2}"* ]]; then
@@ -41,7 +41,7 @@ case "$subcommand" in
         if [[ "$php_version" != "$default_php_version" ]]; then
             shift
         fi
-        docker-compose run --rm --user $UID:$EUID  -v /$(pwd):/work -w //work php$php_version $subcommand "$*"
+        docker-compose -f "$docker_compose_file" run --rm --user $UID:$EUID  -v /$(pwd):/work -w //work php$php_version $subcommand "$*"
         ;;
     * )
         usage
