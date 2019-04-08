@@ -13,12 +13,10 @@ usage() {
 get_php_version() {
     local php_version=${default_php_version}
     local valid_php_versions=(72 71 70 56)
-
-    if [[ " ${valid_php_versions[*]} " == *"${1:1:2}"* ]]; then
+    if [[ " ${valid_php_versions[@]} " =~ " ${1:1:2} " ]]; then
         php_version=${1:1:2}
     fi
-
-    echo $php_version
+    echo ${php_version}
 }
 
 while getopts ":h" opt; do
